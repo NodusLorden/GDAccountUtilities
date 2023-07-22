@@ -40,7 +40,7 @@ def main():
         print(text_data)
         return
 
-    if text_data == "-11" or "-1":
+    if text_data == "-11" or text_data == "-1":
         print("Error: account information is incorrect")
         return
 
@@ -67,6 +67,10 @@ def main():
         with open(path + "CCGameManager.dat", "wb") as fp:
             fp.write(manager_data)
         with open(path + "CCLocalLevels.dat", "wb") as fp:
+            fp.write(level_data)
+        with open(path + "CCGameManager2.dat", "wb") as fp:
+            fp.write(manager_data)
+        with open(path + "CCLocalLevels2.dat", "wb") as fp:
             fp.write(level_data)
     except FileNotFoundError:
         print(f"Error: file '{path}CCGameManager.dat' or '{path}CCLocalLevels.dat' cannot be created")
